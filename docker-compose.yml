@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173" # Frontend development server
+    depends_on:
+      - backend
+    volumes:
+      - frontend_data:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Fix for Linux file watchers
+    networks:
+      - jio
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "2705:2705"
+    # depends_on:
+    #   - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/jio_sim
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Hp27052002@
+    networks:
+      - jio
+
+#   db:
+#     image: mysql:latest
+#     container_name: mysql
+#     ports:
+#       - "3307:3306"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: Hp27052002@
+#       MYSQL_DATABASE: jio_sim
+#     volumes:
+#       - db_data:/var/lib/mysql
+#     networks:
+#       - jio
+
+volumes:
+    frontend_data:
+#   db_data:
+
+networks:
+  jio:

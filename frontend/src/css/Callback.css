@@ -1,0 +1,119 @@
+.want-a-callback {
+  display: flex;
+  background-color: #0f3cc9;
+  color: #ffff;
+  width: 100%;
+  padding-top: 2vmax;
+  padding-bottom: 2vmax;
+  .heading-callback {
+    width: 50%;
+    padding: 2vmax 4vmax;
+    h1{
+        font-size: 4rem;
+        font-weight: 800;
+    }
+    h4{
+        margin-top: 1vmax;
+        color: #ffffffcc;
+    }
+  }
+  .callback-form {
+    width: 100%;
+    .form-input {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      .input-container{
+        width: 50%;
+      }
+
+      .errors-bar{
+        border-bottom:2px solid rgb(255, 0, 0);
+       }
+       .error-message{
+        font-size: 1vmax;
+        color: #680101;
+        display: flex;
+        align-items: center;
+        margin-left: 2vmax;
+        margin-top: 0.5vmax;
+        svg{
+            margin-right: 0.7vmax;
+            font-size: 1.1vmax;
+            background-color: #ff0000;
+            border-radius: 50%;
+            color: white;
+        }
+    }
+}
+    .input-box {
+        width: 80%;
+      margin-left: 2vmax;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      margin-top: 3vmax;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.893);
+      label {
+        position: absolute;
+        top: 0.7vmax;
+        color: rgba(255, 255, 255, 0.929);
+        transition: all 0.3s ease-in-out;
+      }
+      input,
+      select {
+        outline: none;
+        border: none;
+        padding: 1vmax 0vmax 0.7vmax 0vmax;
+        width: 100%;
+        background-color: #ffffff00;
+        z-index: 1;
+        color: #ffff;
+      }
+      select option {
+        padding: 10px;
+        background-color: #ffffffa1;
+        color: #000000;
+        border-bottom: 1px solid #ccc; /* Separator line */
+      }
+
+      input:focus ~ label,
+      input:valid ~ label,
+      select:focus ~ label,
+      select:valid ~ label {
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-85%);
+        font-size: 1vmax;
+      }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    p{
+        margin-left: 2vmax;
+        margin-top: 2vmax;
+        font-weight: 400;
+        a{
+            text-decoration: none;
+            color: #adcefb;
+            font-weight: 500;
+        }
+    }
+    button{
+        margin-left: 2vmax;
+        margin-top: 2vmax;
+        border: none;
+        padding: 1vmax;
+        border-radius: 40px;
+        font-weight: 500;
+        background-color: #ffffff7c;
+    }
+    button:hover{
+        background-color: #ffffff98;
+        transition: all 0.2s ease;
+    }
+  }
+}
