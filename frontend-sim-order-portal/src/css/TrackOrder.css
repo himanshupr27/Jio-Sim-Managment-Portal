@@ -1,0 +1,94 @@
+.track-container{
+    margin: 2vmax 3vmax;
+    padding: 2vmax;
+    background-color: rgb(255, 254, 233);
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 5px 0px grey; */
+    .image-box{
+        display: flex;
+        justify-content: center;
+    }
+    img{
+        width: 7vmax;
+        margin-top: 1vmax;
+    }
+    .track-heading{
+          font-family:sans-serif;
+          font-weight: 500;
+          color: rgb(0, 126, 0);
+    }
+    .application-id{
+        font-size: 1.3vmax;
+        span{
+            font-weight: 600;
+            margin-left: 1vmax;
+        }
+    }
+    .content-status{
+        /* display: flex; */
+        width: 100%;
+        /* justify-content: space-between; */
+    }
+    .application-status{
+        background-color: rgb(253, 253, 235);
+        border-radius: 10px;
+        width:50%;
+        padding: 1vmax 2vmax;
+        h5{
+            font-weight: 700;
+            font-size: 1.5vmax;
+        }
+        table, th, td {
+            border: 1px solid rgb(117, 117, 117);
+        }
+        table{
+            width: 100%;
+            td,th{
+                padding:0.5vmax 1vmax;
+            }
+            .sucess,.pending{
+                width:60%;
+            }
+            .sucess{
+                span{
+                    background-color: rgb(59, 169, 59);
+                    color: rgb(255, 255, 255);
+                    padding: 0.4vmax 0.6vmax;
+                    border-radius: 20px;
+                }
+            }
+            .pending{
+                span{
+                    background-color: rgb(169, 59, 59);
+                    color: rgb(255, 255, 255);
+                    padding: 0.4vmax 1vmax;
+                    border-radius: 20px;
+                }
+            }
+        }
+   }
+   .note{
+    /* width: 40%; */
+    /* margin-left: 2vmax; */
+    margin-top: 1vmax;
+    background-color:rgb(254, 254, 239);
+    padding:0.5vmax 2vmax;
+    font-weight: 600;
+   }
+   .btn-box{
+    display: flex;
+    justify-content: center;
+    button{
+        border: none;
+        background-color: var(--dark-blue);
+        color: #ffff;
+        padding: 0.4vmax 1vmax;
+        border-radius: 20px;
+        margin-top: 1vmax;
+    }
+    button:hover{
+        background-color: var(--light-blue);
+        font-weight: 700;
+    }
+   }
+}

@@ -3,10 +3,27 @@ version: '3.9'
 services:
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend-landing website
       dockerfile: Dockerfile
     ports:
       - "5173:5173" # Frontend development server
+    depends_on:
+      - backend
+      - frontend2
+    volumes:
+      - frontend_data:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Fix for Linux file watchers
+    networks:
+      - jio
+    
+  frontend2:
+    build:
+      context: ./frontend-sim-order-portal
+      dockerfile: Dockerfile
+    ports:
+      - "5174:5174" # Frontend development server
     depends_on:
       - backend
     volumes:

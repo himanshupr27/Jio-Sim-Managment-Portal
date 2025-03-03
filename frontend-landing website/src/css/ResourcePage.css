@@ -1,0 +1,127 @@
+.resource-content {
+  width: 100%;
+  padding: 2vmax;
+  /* font-family: JioType, helvetica, arial, sans-serif; */
+  .resourse-heading {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2vmax;
+  }
+  .date-share {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4vmax;
+    font-weight: 500;
+    color: rgb(0 0 0 / 65%);
+    margin-right: 2vmax;
+  }
+  .share-options {
+    display: flex;
+    .share-svg {
+      color: #fff;
+      background-color: var(--light-blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.6vmax;
+      border-radius: 50%;
+      margin-left: 1vmax;
+      cursor: pointer;
+      svg {
+        font-size: 1.2vmax;
+      }
+    }
+  }
+  .main-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vmax 0;
+    max-height: 460px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .main-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 460px;
+    object-fit: cover; 
+    border-radius: 20px;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .share-article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-weight: 800;
+        margin: 1vmax 0;
+      }
+    }
+  }
+  .content {
+    width: 70%;
+    text-align: justify;
+    color: rgb(0 0 0 / 65%);
+    /* font-family: JioType, helvetica, arial, sans-serif; */
+    font-weight: 500;
+    text-transform: none;
+    font-size: 1rem;
+    letter-spacing: -0.08px;
+    line-height: 1.5;
+    h2 {
+      text-align: left;
+      font-weight: 900;
+      color: black;
+      margin: 1.5vmax 0;
+    }
+    li {
+      margin: 2vmax 0;
+    }
+    p {
+      margin: 2vmax 0;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      img {
+        width: 70%;
+      }
+    }
+  }
+  .helpfull {
+    h4 {
+      font-weight: 800;
+      margin-top: 2vmax;
+      margin-bottom: 1.2vmax;
+    }
+    .svg-yes-no {
+      display: flex;
+      .svg-box {
+        font-size: 1.4vmax;
+        border: 1px solid rgb(209, 209, 209);
+        margin-right: 1vmax;
+        padding: 0.6vmax 1.4vmax;
+        border-radius: 30px;
+        color: var(--dark-blue);
+        font-weight: 700;
+        svg {
+          margin-right: 0.3vmax;
+          font-size: 1.8vmax;
+        }
+      }
+      .svg-box:hover {
+        cursor: pointer;
+        border-color: var(--darkest-blue);
+      }
+    }
+  }
+}

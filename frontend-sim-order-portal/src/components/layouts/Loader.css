@@ -1,0 +1,19 @@
+.loader-box{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-top: 4px solid grey;
+    animation: loadingRotate 800ms linear infinite;
+}
+@keyframes loadingRotate {
+    to{
+        transform: rotateZ(-360deg);
+    }
+  }

@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+:root{
+--light-blue:#0F3CC9;
+--dark-blue:#0A2885;
+--blue:#000093;
+--darkest-blue:#00004C;
+--lightest-blue:#3535F3;
+}
