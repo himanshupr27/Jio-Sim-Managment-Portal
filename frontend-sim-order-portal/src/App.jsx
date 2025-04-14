@@ -13,9 +13,14 @@ import PaymentSucess from './components/orders/PymentSucess.jsx';
 import Recording from './components/e-KYC/Recording.jsx';
 import PersonalDetails from './components/e-KYC/PersonalDetails.jsx';
 import TrackOrder from './components/orders/TrackOrder.jsx';
+import Order from './components/page/Order.jsx';
 
 function App() {
   const router = createBrowserRouter([
+    {
+      path: "/order",
+      element: <><Navbar /><Order /><Footer/></>,
+    },
     {
       path: "/loader",
       element: <><Navbar /><Loader /></>,

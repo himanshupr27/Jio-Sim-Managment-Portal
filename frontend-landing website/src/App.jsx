@@ -24,6 +24,8 @@ import LoginNew from './components/user/LoginNew.jsx';
 import Resources from './components/page/Resources.jsx';
 import ResourcePages from './components/page/ResourcePages.jsx';
 import Overview from './components/page/Overview.jsx';
+import ResearchCollaboration from './components/page/ResearchCollaboration.jsx';
+import ScrollToTop from './components/layouts/ScrollToTop.jsx';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -42,11 +44,11 @@ const App = () => {
     },
     {
       path: "/components/Research_Collaboration",
-      element: <><Navbar/><Navbar2/><Resources/><Footer/></>,
+      element: <><Navbar/><Navbar2/><ResearchCollaboration/><Footer/></>,
     },
     {
       path: "/components/Overview",
-      element: <><Navbar/><Navbar2/><Overview/><Footer/></>,
+      element: <><Navbar/><Navbar2/><ScrollToTop/><Overview/><Footer/></>,
     },
     {
       path: "/components/Resources/page",

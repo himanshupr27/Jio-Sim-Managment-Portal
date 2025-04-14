@@ -1,4 +1,5 @@
 .signup {
+  font-family: JioType, helvetica, arial, sans-serif;
   width: 100%;
   position: relative;
   .signup-box {
@@ -8,6 +9,9 @@
       width: 50%;
       padding: 6.5vmax;
       padding-top: 5vmax;
+      h1{
+        font-weight: 700;
+      }
       form {
         width: 70%;
         .input-box {
@@ -137,54 +141,50 @@
       width: 50%;
     }
     .steps-container {
-      background-color: #f5faff;
       padding: 2rem;
       border-radius: 8px;
       width: 100%;
       margin: auto;
       margin-right: 2vmax;
-      margin-top: 6vmax;
+      margin-top: 0vmax;
+     
       font-family: Arial, sans-serif;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .Carousal-container{
+        width: 100%;
+        padding: 2vmax;
+      }
+      .carousel{
+        .content-car{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h5{
+            font-size: 1.7vmax;
+            font-family: JioType, helvetica, arial, sans-serif;
+            font-weight: 900;
+          }
+        }
+        img{
+          width: 60%;
+        }
+      }
     }
 
     .steps-container h2 {
+      font-family:JioType, helvetica, arial, sans-serif;
+      font-weight: 900;
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: -1rem;
       color: #333;
+      span{
+        color: rgb(255, 165, 0);
+        font-size: 1.7rem;
+      }
     }
 
-    .highlight {
-      color: #e97300;
-      font-weight: bold;
-      font-size: 3vmax;
-    }
 
-    .steps-list {
-      display: flex;
-    }
-
-    .step-badge {
-      background-color: #007bff;
-      color: white;
-      width: 100%;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      margin-right: 1rem;
-    }
-
-    .step p {
-      margin: 0;
-      color: #333;
-    }
-
-    .dotted-line {
-      height: 2rem;
-      border-left: 4px dotted #007bff;
-      margin-left: 2rem;
-    }
     .steps-details {
       margin-left: 1vmax;
       p {

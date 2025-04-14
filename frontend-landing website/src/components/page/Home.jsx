@@ -77,12 +77,14 @@ const handleChange = (now, previous) => {
           <Col className='hm-xt-2-box-2'>
             <button>PLANS</button>
             <h4>Enterprise Plans - PKI SIM</h4>
-            <a href="http://localhost:5174/sim/order" target="_blank" rel="noopener noreferrer">Order Now</a>
+            <a href="http://localhost:5174/order" target="_blank" rel="noopener noreferrer">Order Now</a>
           </Col>
           <Col className='hm-xt-2-box-3'>
-            <button>R&D</button>
-            <h4>Research Collaboration</h4>
-            <a hrepf="">Read Now</a>
+            <button> R&D </button>
+            <h4>Publications</h4>
+            <Link to="/components/Research_Collaboration" 
+            target="_blank" rel="noopener noreferrer"
+            >Read Now</Link>
           </Col>
         </Row>
       </Container>

@@ -40,7 +40,7 @@ const StillHaveAnyQs = () => {
 
         <div className="list-of-questions">
 
-        {/* <>
+      {/* <>
           <div className="question-item">
             <div className="question-header" onClick={() => toggleAccordion(1)}>
               <h5>What is Smart Electricity Metering solution?</h5>
@@ -123,7 +123,7 @@ const StillHaveAnyQs = () => {
             </div>
             <hr />
           </div>
-          </> */}
+      </> */}
 
           {questionlist == 1 &&(<Accordion questions={ServiceOfferings}/>)}
           {questionlist == 2 &&(<Accordion questions={Buying}/>)}

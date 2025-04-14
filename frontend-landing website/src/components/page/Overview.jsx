@@ -9,9 +9,9 @@ import "../../css/Overview.css"
 import { explainers } from '../../data/JioExplainers';
 const Overview = () => {
   
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
       const navigate = useNavigate();
       // const navigateToExplainerPage=(data)=>{
       //     const serializedData = {
