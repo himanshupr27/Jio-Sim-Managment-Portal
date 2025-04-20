@@ -1,45 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import "@/css/StillHaveAnyQs.css"
-import { FaPlus, FaMinus } from 'react-icons/fa';
 import Accordion from './Accordion';
-import {ServiceOfferings,Buying,OnboardingAndActivation,CustomerService,BillsAndPay} from "../../data/Questions";
+import {
+  ServiceOfferings,
+  Buying,
+  OnboardingAndActivation,
+  CustomerService,
+  BillsAndPay
+} from "../../data/Questions";
 
 const StillHaveAnyQs = () => {
   const [questionlist, setquestionlist] = useState(1);
   const [activeIndex, setActiveIndex] = useState(null);
 
+  const underlineRef = useRef();
+  const tabRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
+
   const handleselectQuestion = (i) => {
-    setquestionlist(i)
+    setquestionlist(i);
   };
 
+  useEffect(() => {
+    const currentTab = tabRefs[questionlist - 1]?.current;
+    const underline = underlineRef.current;
+
+    if (currentTab && underline) {
+      underline.style.width = `${currentTab.offsetWidth + 5 }px`;
+      underline.style.left = `${currentTab.offsetLeft - 2.5}px`;
+    }
+  }, [questionlist]);
 
   const toggleAccordion = (index) => {
-    if (activeIndex === index) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-    }
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
     <div className='question-container'>
       <h1>Still have questions?</h1>
-      <h4>Find answers to some of the commonly asked questions by our<br /> JioBusiness customers.</h4>
+      <h4>
+        Find answers to some of the commonly asked questions by our<br />
+        JioBusiness customers.
+      </h4>
+
       <div className="questions-catagory">
         <ul className="catagory-list">
-          <li className={`${questionlist == 1 ? 'list-bold' : ''}`} onClick={() => { handleselectQuestion(1) }}>Service Offerings<br /><div className={`${questionlist == 1 ? 'list-border' : ''}`}></div></li>
+          <li ref={tabRefs[0]} className={questionlist === 1 ? 'list-bold' : ''} onClick={() => handleselectQuestion(1)}>
+            Service Offerings
+          </li>
+          <li ref={tabRefs[1]} className={questionlist === 2 ? 'list-bold' : ''} onClick={() => handleselectQuestion(2)}>
+            Buying
+          </li>
+          <li ref={tabRefs[2]} className={questionlist === 3 ? 'list-bold' : ''} onClick={() => handleselectQuestion(3)}>
+            Onboarding & Activation
+          </li>
+          <li ref={tabRefs[3]} className={questionlist === 4 ? 'list-bold' : ''} onClick={() => handleselectQuestion(4)}>
+            Customer Service
+          </li>
+          <li ref={tabRefs[4]} className={questionlist === 5 ? 'list-bold' : ''} onClick={() => handleselectQuestion(5)}>
+            Bill & Pay
+          </li>
 
-          <li className={`${questionlist == 2 ? 'list-bold' : ''}`} onClick={() => { handleselectQuestion(2) }}>Buying<br /><div className={`${questionlist == 2 ? 'list-border' : ''}`}></div></li>
-
-          <li className={`${questionlist == 3 ? 'list-bold' : ''}`} onClick={() => { handleselectQuestion(3) }}>Onboarding & Activation<br /><div className={`${questionlist == 3 ? 'list-border' : ''}`}></div></li>
-
-          <li className={`${questionlist == 4 ? 'list-bold' : ''}`} onClick={() => { handleselectQuestion(4) }}>Customer Service<br /><div className={`${questionlist == 4 ? 'list-border' : ''}`}></div></li>
-
-          <li className={`${questionlist == 5 ? 'list-bold' : ''}`} onClick={() => { handleselectQuestion(5) }}>Bill & Pay<br /><div className={`${questionlist == 5 ? 'list-border' : ''}`}></div></li>
+          {/* Animated underline */}
+          <div className="underline" ref={underlineRef}></div>
         </ul>
 
         <div className="list-of-questions">
-
+<>
       {/* <>
           <div className="question-item">
             <div className="question-header" onClick={() => toggleAccordion(1)}>
@@ -124,7 +150,7 @@ const StillHaveAnyQs = () => {
             <hr />
           </div>
       </> */}
-
+</>
           {questionlist == 1 &&(<Accordion questions={ServiceOfferings}/>)}
           {questionlist == 2 &&(<Accordion questions={Buying}/>)}
           {questionlist == 3 &&(<Accordion questions={OnboardingAndActivation}/>)}

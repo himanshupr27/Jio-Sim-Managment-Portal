@@ -17,26 +17,37 @@
     padding: 3vmax;
     .catagory-list {
       display: flex;
-
+      position: relative;
+      margin-bottom: 2vmax;
+    
       li {
         list-style: none;
         margin-right: 2.5vmax;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.65);
-
-        .list-border {
-          width: 100%;
-          margin-top: 0.5vmax;
-          border-radius: 40px;
-          border: 2px solid #0f3cc9;
+        cursor: pointer;
+    
+        &.list-bold {
+          color: black;
+        }
+    
+        &:hover {
+          color: black;
         }
       }
-      li:hover,
-      .list-bold {
-        color: black;
-        cursor: pointer;
+    
+      .underline {
+        position: absolute;
+        bottom: -0.8vmax;
+        height: 4px;
+        background-color: #0f3cc9;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+        width: 0;
+        left: 0;
       }
     }
+    
     .question-item {
       transition: all 0.7s ease-in-out;
       .question-header {

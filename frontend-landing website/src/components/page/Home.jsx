@@ -12,18 +12,18 @@ import { Link,useNavigate } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel/dist/components/Carousel';
 
 const Home = () => {
-  const items = [
-    {
-        name: "Summer Hair",
-        details: "Care",
-        image: "/Images/Home/image-1.jpeg"
-    },
-    {
-        name: "Offer On",
-        details: "Domex",
-        image: "/Images/Home/image-2.webp"
-    },
-  ];
+  // const items = [
+  //   {
+  //       name: "Summer Hair",
+  //       details: "Care",
+  //       image: "/Images/Home/image-1.jpeg"
+  //   },
+  //   {
+  //       name: "Offer On",
+  //       details: "Domex",
+  //       image: "/Images/Home/image-2.webp"
+  //   },
+  // ];
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 

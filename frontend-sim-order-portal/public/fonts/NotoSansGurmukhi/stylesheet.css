@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Noto Sans Gurmukhi';
+    src: url('NotoSansGurmukhi-Regular.woff2') format('woff2'),
+        url('NotoSansGurmukhi-Regular.woff') format('woff'),
+        url('NotoSansGurmukhi-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Gurmukhi';
+    src: url('NotoSansGurmukhi-Bold.woff2') format('woff2'),
+        url('NotoSansGurmukhi-Bold.woff') format('woff'),
+        url('NotoSansGurmukhi-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

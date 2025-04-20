@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('NotoSansTamil-Bold.woff2') format('woff2'),
+        url('NotoSansTamil-Bold.woff') format('woff'),
+        url('NotoSansTamil-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('NotoSansTamil-Regular.woff2') format('woff2'),
+        url('NotoSansTamil-Regular.woff') format('woff'),
+        url('NotoSansTamil-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
