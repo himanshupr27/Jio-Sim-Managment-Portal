@@ -46,7 +46,7 @@
     max-width: 1200px;
     height: auto;
     max-height: 460px;
-    object-fit: cover; 
+    object-fit: cover;
     border-radius: 20px;
   }
   .content-container {
@@ -94,6 +94,21 @@
       width: 100%;
       img {
         width: 70%;
+      }
+    }
+    .Pdf-button {
+      width: 100%;
+      text-align: center;
+      button {
+        border: none;
+        padding: 1vmax 2vmax;
+        border-radius: 40px;
+        color: white;
+        background-color: var(--light-blue);
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: var(--dark-blue);
       }
     }
   }

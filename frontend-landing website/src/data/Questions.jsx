@@ -1,60 +1,61 @@
-export const ServiceOfferings=[
-    {
-        title: "Why do I choose Jio’s NB-IoT devices over LoRa and RF solutions available in market?",
-        content: [
-          { type: "paragraph", text: "Key features of Jio’s NB-IoT that makes it the best choice available in the market today are:" },
-          { type: "bullet-list", items: [
-            "NB-IoT is a 3GPP standard network and does not carry drawbacks of proprietary RF mesh networks",
-            "NB-IoT does not need any additional infrastructure setup.",
-            "Being a cellular technology, NB-IoT ensures no vendor lock-ins and one can switch between network operators.",
-            "Jio provides Zero Touch Provisioning that makes deployment and maintenance seamless.",
-            "Long-term sustainability and reliability is ensured as Jio devices are integrated and certified by driver manufacturers.",
-            "NB-IoT ensures 99.9% AMRs unlike other technologies which are able to achieve upto 75% AMRs."
-            ]
-          },
+export const ServiceOfferings = [
+  {
+    title: "Why do I choose Jio’s NB-IoT devices over LoRa and RF solutions available in market?",
+    content: [
+      { type: "paragraph", text: "Key features of Jio’s NB-IoT that makes it the best choice available in the market today are:" },
+      {
+        type: "bullet-list", items: [
+          "NB-IoT is a 3GPP standard network and does not carry drawbacks of proprietary RF mesh networks",
+          "NB-IoT does not need any additional infrastructure setup.",
+          "Being a cellular technology, NB-IoT ensures no vendor lock-ins and one can switch between network operators.",
+          "Jio provides Zero Touch Provisioning that makes deployment and maintenance seamless.",
+          "Long-term sustainability and reliability is ensured as Jio devices are integrated and certified by driver manufacturers.",
+          "NB-IoT ensures 99.9% AMRs unlike other technologies which are able to achieve upto 75% AMRs."
         ]
       },
+    ]
+  },
 
-    {
-        title: "What is the advantage of having all communication under one roof?",
-        content: [
-          { type: "paragraph", text: "Smart Metering implementations have traditionally failed because of unreliable communication. There have been multiple partners who would implement different components." },
-          { type: "paragraph", text: "Jio understood the problem and decided to provide all the components under one roof and take complete responsibility of transferring metering data to the cloud. Thus, none of the other stakeholders have to worry about the communication and continue to focus on their respective areas of expertise. Moreover, cost of communication reduces drastically." }
-        ]
-      },
+  {
+    title: "What is the advantage of having all communication under one roof?",
+    content: [
+      { type: "paragraph", text: "Smart Metering implementations have traditionally failed because of unreliable communication. There have been multiple partners who would implement different components." },
+      { type: "paragraph", text: "Jio understood the problem and decided to provide all the components under one roof and take complete responsibility of transferring metering data to the cloud. Thus, none of the other stakeholders have to worry about the communication and continue to focus on their respective areas of expertise. Moreover, cost of communication reduces drastically." }
+    ]
+  },
 
-    {
-        title: "Is the Head End System (HES ) proven?",
-        content: [
-          { type: "paragraph", text: "Yes, the HES is an internationally acclaimed HES system which has a proven track record of about 2 decades. The HES is already proven with millions of connected meters and works with all standard protocols. The HES has well tested adapters with all the leading MDMS systems." }
-        ]
-      },
+  {
+    title: "Is the Head End System (HES ) proven?",
+    content: [
+      { type: "paragraph", text: "Yes, the HES is an internationally acclaimed HES system which has a proven track record of about 2 decades. The HES is already proven with millions of connected meters and works with all standard protocols. The HES has well tested adapters with all the leading MDMS systems." }
+    ]
+  },
 
-    {
-        title: "How is Jio’s solution different from those available in market?",
-        content: [
-          { type: "paragraph", text: "Jio is a one-stop-shop for all components including hardware, nationwide connectivity, IoT platform, installation and after sales services." }
-        ]
-      },
+  {
+    title: "How is Jio’s solution different from those available in market?",
+    content: [
+      { type: "paragraph", text: "Jio is a one-stop-shop for all components including hardware, nationwide connectivity, IoT platform, installation and after sales services." }
+    ]
+  },
 
-    {
-        title: "What is Smart Electricity Metering solution?",
-        content: [
-          { type: "paragraph", text: "Smart Electricity Metering solution is about monitoring and recording of real time energy consumption, directing stored energy data to Central Server (CS) and executing the commands that are coming from the CS." }
-        ]
-      },
-    {
-        title: "Do I need to install gateways or DCUs or any additional infrastructure?",
-        content: [
-          { type: "paragraph", text: "No need of investing single penny into developing infrastructure. All Jio cellular network towers (eNodeB) are enabled with NB-IoT supported hardware for NB bands communication." }
-        ]
-      },
-    {
-        title: "Do I need to install plastic SIM cards?",
-        content: [
-          { type: "paragraph", text: "Not needed anymore, each NIC card has an eSIM facility that will reduce manual efforts to install SIM. Also misuse of SIMs is next to impossible." }
-        ]
-      },
+  {
+    title: "What is Smart Electricity Metering solution?",
+    content: [
+      { type: "paragraph", text: "Smart Electricity Metering solution is about monitoring and recording of real time energy consumption, directing stored energy data to Central Server (CS) and executing the commands that are coming from the CS." }
+    ]
+  },
+  {
+    title: "Do I need to install gateways or DCUs or any additional infrastructure?",
+    content: [
+      { type: "paragraph", text: "No need of investing single penny into developing infrastructure. All Jio cellular network towers (eNodeB) are enabled with NB-IoT supported hardware for NB bands communication." }
+    ]
+  },
+  {
+    title: "Do I need to install plastic SIM cards?",
+    content: [
+      { type: "paragraph", text: "Not needed anymore, each NIC card has an eSIM facility that will reduce manual efforts to install SIM. Also misuse of SIMs is next to impossible." }
+    ]
+  },
 ];
 export const Buying = [
   {
@@ -67,19 +68,20 @@ export const Buying = [
     ]
   }
 ];
-export const OnboardingAndActivation=[
+export const OnboardingAndActivation = [
   {
     title: "What documentation is required from the customer to get onboarded?",
     content: [
       { type: "paragraph", text: "Here is the list of documents required to get onboarded:" },
-      { type: "numeric-list", items: [
-        "PAN card copy (Require to create the customer code in Jio systems)",
-        "Purchase Order with List of locations with address and contact duly signed and stamped",
-        "Proof of Identity of Authorized Signatory",
-        "GST certificate copy of the state where the delivery will happen (can be multiple state copies in case of multiple delivery locations*)",
-        "Duly filled and signed Customer Application Form (CAF)",
-        "Relationship document as MOA stating that the person is an Authorised Signatory",
-        "All documents stamped with company seal & self-attested by Authorized Signatory"
+      {
+        type: "numeric-list", items: [
+          "PAN card copy (Require to create the customer code in Jio systems)",
+          "Purchase Order with List of locations with address and contact duly signed and stamped",
+          "Proof of Identity of Authorized Signatory",
+          "GST certificate copy of the state where the delivery will happen (can be multiple state copies in case of multiple delivery locations*)",
+          "Duly filled and signed Customer Application Form (CAF)",
+          "Relationship document as MOA stating that the person is an Authorised Signatory",
+          "All documents stamped with company seal & self-attested by Authorized Signatory"
         ]
       },
       { type: "paragraph", text: "Note*: If there are multiple delivery locations, then both customer and billing team will share multiple GST copies corresponding to each state of delivery location." },
@@ -117,17 +119,18 @@ export const OnboardingAndActivation=[
     content: [
       { type: "paragraph", text: "Listed below are the documents accepted as proof of authorization for authorized signatory of the organization:" },
       { type: "paragraph", text: "Sr. No	Type of Document (Proof of Authorization for Authorized Signatory of the Organization)" },
-      { type: "numeric-list", items: [
-        "Memorandum of Association",
-        "Power of Attorney (along with linkage proof)",
-        "Board Resolution with letter of authority on organization’s letter head Signed by Company Secretary",
-        "Board Resolution with letter of authority on organization’s letter head (along with linkage proof if signed by any person other than CS)",
-        "Certificate from Bank certifying the person as Authorized Signatory",
-        "Proprietorship Deed",
-        "Partnership Deed",
-        "GST certificate having name/designation of the Authorized Signatory",
-        "Any document issued by Government authorities establishing the authorization of AS e.g. Shop & Establishment Certificate, Labour Certificate, EXIM Certificate",
-        "Self-Authorisation on Govt letterhead"
+      {
+        type: "numeric-list", items: [
+          "Memorandum of Association",
+          "Power of Attorney (along with linkage proof)",
+          "Board Resolution with letter of authority on organization’s letter head Signed by Company Secretary",
+          "Board Resolution with letter of authority on organization’s letter head (along with linkage proof if signed by any person other than CS)",
+          "Certificate from Bank certifying the person as Authorized Signatory",
+          "Proprietorship Deed",
+          "Partnership Deed",
+          "GST certificate having name/designation of the Authorized Signatory",
+          "Any document issued by Government authorities establishing the authorization of AS e.g. Shop & Establishment Certificate, Labour Certificate, EXIM Certificate",
+          "Self-Authorisation on Govt letterhead"
         ]
       },
       { type: "paragraph", text: "Note*: If there are multiple delivery locations, then both customer and billing team will share multiple GST copies corresponding to each state of delivery location." },
@@ -137,12 +140,13 @@ export const OnboardingAndActivation=[
   {
     title: "What all documents are required to be submitted along with customer application form (CAF) for KYC?",
     content: [
-      { type: "bullet-list", items: [
-        "(POA) Proof of address of the company.",
-        "(POI) Proof of identity of the company",
-        "Proof of Authorization signatory for the company",
-        "(POI) Proof of personal identity of Authorized signatory",
-        "Customer undertaking on logical partitioning",
+      {
+        type: "bullet-list", items: [
+          "(POA) Proof of address of the company.",
+          "(POI) Proof of identity of the company",
+          "Proof of Authorization signatory for the company",
+          "(POI) Proof of personal identity of Authorized signatory",
+          "Customer undertaking on logical partitioning",
         ]
       },
     ]
@@ -158,7 +162,7 @@ export const OnboardingAndActivation=[
   }
 
 ];
-export const CustomerService=[
+export const CustomerService = [
   {
     title: "How can I raise the complaint?",
     content: [
@@ -196,7 +200,7 @@ export const CustomerService=[
     ]
   }
 ];
-export const BillsAndPay=[
+export const BillsAndPay = [
   {
     title: "What is the frequency of billing for the available plans?",
     content: [
@@ -207,3 +211,36 @@ export const BillsAndPay=[
     ]
   },
 ];
+export const FAQ = [
+  {
+    title: "What is the difference between PKI SIM and traditional SIM cards?",
+    content: [
+      { type: "paragraph", text: "PKI SIMS offer cryptographic capabilities such as digital signatures, secure authentication, and data encryption, unlike traditional SIMs which are limited to network access and authentication." }
+    ]
+  },
+  {
+    title: "Can Face Recognition Security be integrated with our existing infrastructure?",
+    content: [
+      { type: "paragraph", text: "Yes, our face recognition systems support API-based integration and can be embedded into your existing attendance, surveillance, or access control frameworks with minimal effort." }
+    ]
+  },
+  {
+    title: "What are the use cases for PKI in Peer-to-Peer (P2P) networks?",
+    content: [
+      { type: "paragraph", text: "P2P PKI can secure direct communications in decentralized applications such as financial transactions, blockchain ecosystems, loT devices, and secure file transfers by enabling mutual authentication and encrypted channels." }
+    ]
+  },
+  {
+    title: "Is your PKI solution compliant with Indian regulatory standards (e.g., CCA, Aadhaar, MeitY)",
+    content: [
+      { type: "paragraph", text: "Yes, our PKI infrastructure is designed to comply with Indian regulations, including Controller of Certifying Authorities (CCA) guidelines and other cybersecurity mandates issued by Meity and TRAI." }
+    ]
+  },
+  {
+    title: "How can enterprises manage and monitor their security assets post-deployment?",
+    content: [
+      { type: "paragraph", text: "We offer a dedicated self-care portal with real-time monitoring, SIM lifecycle management, device inventory, provisioning tools, and 24x7 support-ensuring full visibility and control." }
+    ]
+  },
+
+]

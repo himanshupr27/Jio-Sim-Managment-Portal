@@ -3,7 +3,9 @@ package com.simmanagmentplatform.Dto;
 import com.simmanagmentplatform.Entity.Address;
 
 // import jakarta.validation.constraints.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

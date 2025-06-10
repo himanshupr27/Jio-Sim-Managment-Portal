@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import "@/css/Home.css";
+import React, { useState } from 'react';
+import "../../css/Homes.css";
 import { Container, Row, Col } from 'reactstrap';
 import { TbTruckDelivery } from "react-icons/tb";
 import { RxBarChart } from "react-icons/rx";
@@ -8,8 +8,8 @@ import { BsPersonWorkspace, BsFileTextFill } from "react-icons/bs";
 import { AiOutlineGlobal } from "react-icons/ai";
 import Callback from './Callback';
 import StillHaveAnyQs from './StillHaveAnyQs';
-import { Link,useNavigate } from 'react-router-dom';
-import Carousel from 'react-material-ui-carousel/dist/components/Carousel';
+import { Link, useNavigate } from 'react-router-dom';
+// import Carousel from 'react-material-ui-carousel/dist/components/Carousel';
 
 const Home = () => {
   // const items = [
@@ -25,16 +25,17 @@ const Home = () => {
   //   },
   // ];
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
-const handleChange = (now, previous) => {
-    setCurrentIndex(now);
-};
+  // const handleChange = (now, previous) => {
+  //   setCurrentIndex(now);
+  // };
   return (
     <div>
       <div className="home-img-container">
-      <img src='/Images/Home/image-1.jpeg' id='home-ing-1' />
-      {/* <Carousel
+        <img src='/Images/Home/image-home.webp' id='home-ing-1' />
+        <>
+        {/* <Carousel
         className='carousel'
         animation="slide"
         duration={1000}
@@ -46,12 +47,17 @@ const handleChange = (now, previous) => {
           <img src={item.image} alt={`${i} Slide`} key={i} style={{ width: "100%", height: "400px", objectFit: "cover" }} />
         ))}
       </Carousel> */}
+        </>
+        <h1 className='image-heading'>Turn Mobility Into a Trusted Business Asset</h1>
       </div>
       <div className='home-content-1'>
-        <h1>Transform business processes with enhanced security - PKI SIM</h1>
-        <p>The PKI SIM (Public Key Infrastructure SIM) project aims to revolutionize mobile security by integrating robust crypto- graphic protocols directly into SIM cards. Leveraging PKI technology, this STM Solution provides an advanced, secure and scalable method for authentications, encryption, and digital signaSure services, ensuring safe data transmission across business use cases.</p>
+        <h1>Transform Business Processes with Enhanced Security, Scalability, and Future-Readiness</h1>
+        <p>Empowering digital trust across the enterprise ecosystem with a robust portfolio of next-generation identity and data protection technologies.</p>
+
         <div>
-          <button type='button' className='video-btn' onClick={()=>{navigate('/video-recording-kyc')}}>Video</button>
+          <button type='button' className='video-btn' 
+          // onClick={() => { navigate('/video-recording-kyc') }}
+          >Video</button>
           <button type='button' className='how-to-order-btn'>How to order</button>
         </div>
       </div>
@@ -59,10 +65,10 @@ const handleChange = (now, previous) => {
         <Row xs='1' sm='2' className="hm-ct-2-bg-img">
           <Col className='big-text'>
             <button className='big-text-btn'>Security</button>
-            <h1>Empowering Trust - PKI SIM</h1>
+            <h1>Our Flagship Solution - PKI SIM</h1>
             <p>
               Digital signing, data protection and management from anytime, anywhere.</p>
-            <button className='big-text-btn' id='learn-more'>Learn More</button>
+              <Link to="/components/learn-more"><button className='big-text-btn' id='learn-more'>Learn More</button></Link>
           </Col>
           <Col className='big-img'>
             <img src="/Images/Home/image-2.webp" />
@@ -82,8 +88,8 @@ const handleChange = (now, previous) => {
           <Col className='hm-xt-2-box-3'>
             <button> R&D </button>
             <h4>Publications</h4>
-            <Link to="/components/Research_Collaboration" 
-            target="_blank" rel="noopener noreferrer"
+            <Link to="/components/Resources"
+              target="_blank" rel="noopener noreferrer"
             >Read Now</Link>
           </Col>
         </Row>
@@ -127,8 +133,6 @@ const handleChange = (now, previous) => {
           </Col>
         </Row>
       </Container>
-
-
       <Callback />
       <StillHaveAnyQs />
 
@@ -137,11 +141,11 @@ const handleChange = (now, previous) => {
           <h1>Tell us about your visit</h1>
           <h4>Please select the emoji that best describes your experience here.</h4>
           <div className="emojies">
-           <button>😡</button>
-           <button>😣</button>
-           <button>😑</button>
-           <button>🙂</button>
-           <button>😍</button>
+            <button>😡</button>
+            <button>😣</button>
+            <button>😑</button>
+            <button>🙂</button>
+            <button>😍</button>
           </div>
         </div>
 

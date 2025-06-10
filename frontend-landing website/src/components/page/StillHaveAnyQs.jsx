@@ -6,7 +6,8 @@ import {
   Buying,
   OnboardingAndActivation,
   CustomerService,
-  BillsAndPay
+  BillsAndPay,
+  FAQ,
 } from "../../data/Questions";
 
 const StillHaveAnyQs = () => {
@@ -45,9 +46,9 @@ const StillHaveAnyQs = () => {
       <div className="questions-catagory">
         <ul className="catagory-list">
           <li ref={tabRefs[0]} className={questionlist === 1 ? 'list-bold' : ''} onClick={() => handleselectQuestion(1)}>
-            Service Offerings
+            Frequently Asked Questions
           </li>
-          <li ref={tabRefs[1]} className={questionlist === 2 ? 'list-bold' : ''} onClick={() => handleselectQuestion(2)}>
+          {/* <li ref={tabRefs[1]} className={questionlist === 2 ? 'list-bold' : ''} onClick={() => handleselectQuestion(2)}>
             Buying
           </li>
           <li ref={tabRefs[2]} className={questionlist === 3 ? 'list-bold' : ''} onClick={() => handleselectQuestion(3)}>
@@ -58,7 +59,7 @@ const StillHaveAnyQs = () => {
           </li>
           <li ref={tabRefs[4]} className={questionlist === 5 ? 'list-bold' : ''} onClick={() => handleselectQuestion(5)}>
             Bill & Pay
-          </li>
+          </li> */}
 
           {/* Animated underline */}
           <div className="underline" ref={underlineRef}></div>
@@ -151,7 +152,8 @@ const StillHaveAnyQs = () => {
           </div>
       </> */}
 </>
-          {questionlist == 1 &&(<Accordion questions={ServiceOfferings}/>)}
+          {questionlist == 1 &&(<Accordion questions={FAQ}/>)}
+          {/* {questionlist == 1 &&(<Accordion questions={ServiceOfferings}/>)} */}
           {questionlist == 2 &&(<Accordion questions={Buying}/>)}
           {questionlist == 3 &&(<Accordion questions={OnboardingAndActivation}/>)}
           {questionlist == 4 &&(<Accordion questions={CustomerService}/>)}

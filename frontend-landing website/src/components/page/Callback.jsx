@@ -38,10 +38,12 @@ const Callback = () => {
       }));
     }
   }
+
   const handelsubmit = () => {
     e.preventDefault();
-
+    
   }
+
   return (
     <div className='want-a-callback'>
       <div className="heading-callback">
@@ -161,7 +163,7 @@ const Callback = () => {
 
 
         <p>By proceeding, you agree to our <Link to="/"> Terms & Condition</Link> </p>
-        <button type='submit'>Generate OTP</button>
+        <button type='submit'>Submit Request</button>
       </form>
     </div>
   )

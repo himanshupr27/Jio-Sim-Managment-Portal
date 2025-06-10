@@ -36,8 +36,8 @@ public class userControllers {
 
     @GetMapping(value="/getallDetails")
     public GetAllResponse<UsersDTO> getAllUsers(
-        @RequestParam (value="PageSize" , defaultValue = "10", required = false) Integer PageSize,
-        @RequestParam (value="PageNumber" , defaultValue = "0", required = false) Integer PageNumber) {
+        @RequestParam (defaultValue = "10", required = false) Integer PageSize,
+        @RequestParam (defaultValue = "0", required = false) Integer PageNumber) {
         
         return this.userservices.getAllUsers(PageNumber,PageSize);
     }

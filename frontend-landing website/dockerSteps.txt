@@ -1,0 +1,7 @@
+docker login
+docker build -t landing-page .
+docker tag landing-page himanshu2705/sim_managment_landing_page:landing-page
+docker push himanshu2705/sim_managment_landing_page:landing-page
+OR
+docker build --no-cache -t himanshu2705/sim_managment_landing_page:latest .
+docker push himanshu2705/sim_managment_landing_page:latest

@@ -88,7 +88,7 @@
         border-radius: 20px;
         padding: 1vmax;
         cursor: pointer;
-        height: fit-content;
+        /* height: 42.5vmax; */
         .resource-type {
           color: grey;
           font-size: 1.34vmax;
@@ -126,10 +126,32 @@
           font-weight: 700;
           margin: 1vmax 0;
         }
+        .resources-details {
+          margin-top: auto;
+          .details {
+            font-size: 0.9vmax;
+            margin-bottom: 0;
+            font-weight: 400;
+            color: rgb(95, 95, 95);
+            span{
+              font-weight: 600;
+            }
+          }
+          
+        }
         .arrow {
-          text-align: end;
-          margin-top: 2vmax;
+          margin-top: auto;
           margin-bottom: 1vmax;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          p {
+            color: grey;
+            font-size: 1.34vmax;
+            font-weight: 600;
+            margin-bottom: 0.7vmax;
+            margin-left: 0.5vmax;
+          }
           .svg-arrow {
             background-color: #ffffff;
             padding: 1vmax;
@@ -151,6 +173,23 @@
       .card:hover {
         box-shadow: 0 0 9px 0px #9e9e9ea8;
       }
+      .coming-soon-message {
+        grid-column: 1 / -1;
+        width: 100%;
+        text-align: center;
+        h2 {
+          font-family: JioType, helvetica, arial, sans-serif;
+          font-weight: 900;
+          text-transform: none;
+          font-size: 2.5rem;
+          letter-spacing: -1.2px;
+          line-height: 1;
+        }
+        p {
+          font-size: 1.3vmax;
+          color: rgba(0, 0, 0, 0.65);
+        }
+      }
     }
     .card-pagination {
       width: 100%;
@@ -159,10 +198,10 @@
       align-items: center;
       button {
         padding: 1vmax;
-        width: 60px;
+        width: 50px;
         border: none;
         border-radius: 50%;
-        margin-left: 1vmax;
+        margin-left: 2vmax;
         background-color: #ffffff00;
         color: var(--light-blue);
         font-weight: 600;

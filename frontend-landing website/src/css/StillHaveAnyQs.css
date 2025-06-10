@@ -26,6 +26,8 @@
         font-weight: 500;
         color: rgba(0, 0, 0, 0.65);
         cursor: pointer;
+        min-width: 70px;
+        text-align: center;
     
         &.list-bold {
           color: black;

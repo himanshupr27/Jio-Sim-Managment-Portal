@@ -27,7 +27,7 @@ const Navbartop = () => {
           </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
-            <NavItem >
+            {/* <NavItem >
               <NavLink to="/components/mobile" className="nav-items">Mobile</NavLink>
             </NavItem>
             <NavItem>
@@ -38,16 +38,16 @@ const Navbartop = () => {
             </NavItem>
             <NavItem>
               <NavLink to="/components/AirFiber" className="nav-items">AirFiber</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
-              <NavLink to="/" className="nav-items active">Business</NavLink>
+              <NavLink to="/" className="nav-items active">Home</NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink to="/components/Devices" className="nav-items">Devices</NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/components/Apps" className="nav-items">Apps</NavLink>
-            </NavItem>
+            </NavItem> */}
           </Nav>
 
 

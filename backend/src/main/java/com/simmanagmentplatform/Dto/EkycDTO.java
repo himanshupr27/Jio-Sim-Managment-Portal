@@ -1,6 +1,8 @@
 package com.simmanagmentplatform.Dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

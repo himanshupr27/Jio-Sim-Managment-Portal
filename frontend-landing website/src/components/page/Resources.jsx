@@ -8,9 +8,10 @@ import { RiNewspaperFill, RiArticleFill, RiQuestionnaireFill } from "react-icons
 import { IoDocument, IoCall } from "react-icons/io5";
 import { AiFillMessage } from "react-icons/ai";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { CgFileDocument } from "react-icons/cg";
 import { ResourceData } from "../../data/ResourcsData"
 import ReactDOMServer from "react-dom/server";
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Resources = () => {
     const navigate = useNavigate();
@@ -21,29 +22,22 @@ const Resources = () => {
 
     const services = [
         { id: "Service1", label: "All Services" },
-        { id: "Service2", label: "Business Applications" },
-        { id: "Service3", label: "Connectivity" },
-        { id: "Service4", label: "Internet of Things" },
-        { id: "Service5", label: "Marketing Solutions" },
-        { id: "Service6", label: "Mobility" },
-        { id: "Service7", label: "Security" },
-        { id: "Service8", label: "Voice & Collaboration" }
+        { id: "Service2", label: "Connectivity" },
+        { id: "Service3", label: "Internet of Things" },
+        { id: "Service4", label: "Security" },
     ];
     const resources = [
         { id: "Resources1", icon: <RiArticleFill />, label: "Article" },
-        { id: "Resources2", icon: <IoDocument />, label: "Case Study" },
-        { id: "Resources3", icon: <HiDocumentText />, label: "Infographic" },
-        { id: "Resources4", icon: <IoIosPaper />, label: "Leaflet" },
-        { id: "Resources5", icon: <GoVideo />, label: "Service Video" },
-        { id: "Resources6", icon: <GoVideo />, label: "Use Case" },
-        { id: "Resources7", icon: <RiNewspaperFill />, label: "Whitepaper" }
+        { id: "Resources2", icon: <IoIosPaper />, label: "Research Paper" },
+        { id: "Resources3", icon: <CgFileDocument />, label: "Patent" },
+        { id: "Resources4", icon: <RiNewspaperFill />, label: "Whitepaper" }
     ];
 
     const filteredData = ResourceData.filter((data) => {
-        // Service filter: If "All Services" is selected, include everything
+
         const matchesService = selectedService === "Service1" || data.service === services.find(s => s.id === selectedService)?.label;
 
-        // Resource filter: If no resources are selected, include everything
+
         const matchesResource = selectedResources.length === 0 || selectedResources.includes(resources.find(r => r.label === data.resourse)?.id);
 
         return matchesService && matchesResource;
@@ -61,18 +55,24 @@ const Resources = () => {
         setSelectedResources([]);
     };
 
-    const navigateToResoursePage=(data)=>{
-        const serializedData = JSON.stringify({
-            ...data,
-            content: ReactDOMServer.renderToString(data.content), // Convert JSX to HTML string
-        });
-    
-        // Encode with UTF-8 support
-        const encodedData = encodeURIComponent(
-            window.btoa(unescape(encodeURIComponent(serializedData)))
-        );
-    
-        window.open(`/components/Resources/page?data=${encodedData}`, "_blank"); // Open in new tab
+    const navigateToResoursePage = (data) => {
+        if (typeof data.content === "string" && data.content.endsWith(".pdf")) {
+
+            window.open(data.content, "_blank");
+        } else {
+
+            const serializedData = JSON.stringify({
+                ...data,
+                content: ReactDOMServer.renderToString(data.content),
+            });
+
+
+            const encodedData = encodeURIComponent(
+                window.btoa(unescape(encodeURIComponent(serializedData)))
+            );
+
+            window.open(`/components/Resources/page?data=${encodedData}`, "_blank");
+        }
     }
 
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
@@ -123,23 +123,50 @@ const Resources = () => {
                 </div>
 
                 <div className="card-content-container">
+
                     <p className='showing'>Showing {filteredData.length} of <strong>{services.find(s => s.id === selectedService)?.label}</strong></p>
                     <div className='cards-container'>
-                        {paginatedData.map(data => (
-                            <div className='card' key={data.id} onClick={()=>navigateToResoursePage(data)}>
-                                <span className='resource-type'>{resources.find(item => item.label === data.resourse)?.icon} {data.resourse}</span>
-                                <div className="image-container">
-                                    <img src={data.image} />
+                        {paginatedData.length > 0 ? (
+                            paginatedData.map(data => (
+                                <div className='card' key={data.id} onClick={() => navigateToResoursePage(data)}>
+                                    <span className='resource-type'>
+                                        {resources.find(item => item.label === data.resourse)?.icon} {data.resourse}
+                                    </span>
+                                    <div className="image-container">
+                                        <img src={data.image} />
+                                    </div>
+                                    <span className='service-type'>{data.service}</span>
+                                    <h3>{data.title}</h3>
+                                    <div className="resources-details">
+                                        {data.patentno && (
+                                            <p className='details'><span>Patent No. :</span> {data.patentno}</p>
+                                        )}
+                                        {data.applicationNo && (
+                                            <p className='details'><span>Application No. :</span> {data.applicationNo}</p>
+                                        )}
+                                        {data.inventers && (
+                                            <p className='details'><span>Inventers :</span> {data.inventers}</p>
+                                        )}
+                                    </div>
+
+                                    <div className="arrow">
+                                        <p>{data.date}</p>
+                                        <span className='svg-arrow'><FaArrowRight /></span>
+                                    </div>
                                 </div>
-                                <span className='service-type'>{data.service}</span>
-                                <h3>{data.title}</h3>
-                                <div className="arrow">
-                                    <span className='svg-arrow'><FaArrowRight /></span>
-                                </div>
+                            ))
+                        ) : (
+                            <div className='coming-soon-message'>
+                                <h2>Coming Soon.......</h2>
+                                <p>We're working hard to bring you more resources. Please check back later!</p>
                             </div>
-                        ))}
+                        )}
                     </div>
-                    <p className='showing'>Showing {currentPage * 6} of {filteredData.length} results found</p>
+                    {filteredData.length > 6 && (
+                        <p className='showing'>
+                            Showing {Math.min(currentPage * itemsPerPage, filteredData.length)} of {filteredData.length} results found
+                        </p>
+                    )}
 
                     {totalPages > 1 && (
                         <div className="card-pagination">
@@ -205,7 +232,7 @@ const Resources = () => {
                     <button type='button'><IoCall />Call us</button>
                 </div>
             </div>
-            
+
         </div>
     )
 }

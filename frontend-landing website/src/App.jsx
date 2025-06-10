@@ -26,12 +26,14 @@ import ResourcePages from './components/page/ResourcePages.jsx';
 import Overview from './components/page/Overview.jsx';
 import ResearchCollaboration from './components/page/ResearchCollaboration.jsx';
 import ScrollToTop from './components/layouts/ScrollToTop.jsx';
+import LearnMore from './components/page/LearnMore.jsx';
+import SecureCommunication from './components/page/SecureCommunication.jsx';
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <><Navbar /><Navbar2/><Path/><Home /><Footer/></>,
+      element: <><Navbar /><Home /><Footer/></>,
     },
     {
       path: "/bussiness/user/login",
@@ -40,19 +42,29 @@ const App = () => {
     },
     {
       path: "/components/Resources",
-      element: <><Navbar/><Navbar2/><Resources/><Footer/></>,
+      element: <><Navbar/><Resources/><Footer/></>,
     },
     {
       path: "/components/Research_Collaboration",
-      element: <><Navbar/><Navbar2/><ResearchCollaboration/><Footer/></>,
+      element: <><Navbar/><ResearchCollaboration/><Footer/></>,
     },
     {
       path: "/components/Overview",
-      element: <><Navbar/><Navbar2/><ScrollToTop/><Overview/><Footer/></>,
+      element: <><Navbar/><ScrollToTop/><Overview/><Footer/></>,
     },
     {
       path: "/components/Resources/page",
-      element: <><Navbar/><Navbar2/><ResourcePages/><Footer/></>,
+      element: <><Navbar/><ResourcePages/><Footer/></>,
+    },
+    {
+      path: "/components/learn-more",
+      element: <><Navbar/><LearnMore/><Footer/></>,
+      children:[
+        {
+          path:"secure-communication",
+          element:<><Navbar/><SecureCommunication/><Footer/></>
+        }
+      ]
     },
     {
       path: "/loader",
