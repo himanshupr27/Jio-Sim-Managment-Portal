@@ -47,11 +47,16 @@ public class userServiceIMP implements userServices {
   
     @Override
     public ResponseEntity<ApiResponse> createUser(UsersDTO usersDTO) {
-    Optional<UsersEntity> existingUser = this.userRepo.findByEmailId(usersDTO.getEmailId());
 
-    if (existingUser.isPresent()) {
-        ApiResponse apiResponse = new ApiResponse("User Already Exists", false);
-        return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
+    Optional<UsersEntity> userByAadhar = this.userRepo.findByaadharNumber(usersDTO.getAadharNumber());
+    Optional<UsersEntity> userByPhone = this.userRepo.findByPhoneNumber(usersDTO.getPhoneNumber());
+
+    if (userByAadhar.isPresent()) {
+        return new ResponseEntity<>(new ApiResponse("Aadhar Number Already Exists", false), HttpStatus.BAD_REQUEST);
+    }
+
+    if (userByPhone.isPresent()) {
+        return new ResponseEntity<>(new ApiResponse("Phone Number Already Exists", false), HttpStatus.BAD_REQUEST);
     }
 
     UsersDTO savedUsersDTO = entityToDto(this.userRepo.save(dtoToEntity(usersDTO)));
@@ -61,6 +66,7 @@ public class userServiceIMP implements userServices {
 
     return new ResponseEntity<>(apiResponseWithData, HttpStatus.CREATED);
 }
+
 
 
     // Get all users with pagination
@@ -100,12 +106,21 @@ public class userServiceIMP implements userServices {
     }
 
     @Override
-    public UsersDTO getUserByEmailId(String emailId)
+    public UsersDTO getUserByAadharNumber(String aadharNumber)
     {
-        UsersEntity userEntity = this.userRepo.findByEmailId(emailId)
-        .orElseThrow(() -> new ResourseNotFoundException("User ", "ID", emailId));
+        UsersEntity userEntity = this.userRepo.findByaadharNumber(aadharNumber)
+        .orElseThrow(() -> new ResourseNotFoundException("User ", "ID", aadharNumber));
     return entityToDto(userEntity);
     }
+
+    @Override
+    public UsersDTO getUserByPhoneNumber(String phoneNumber)
+    {
+        UsersEntity userEntity = this.userRepo.findByaadharNumber(phoneNumber)
+        .orElseThrow(() -> new ResourseNotFoundException("User ", "ID", phoneNumber));
+    return entityToDto(userEntity);
+    }
+
     // Delete a user by ID
     @Override
     public ResponseEntity<ApiResponse> deleteUser(Long id) {
@@ -125,8 +140,8 @@ public class userServiceIMP implements userServices {
             .orElseThrow(() -> new ResourseNotFoundException("User ", "ID", Long.toString(id)));
 
         // Update user fields
-        userEntity.setFullName(usersDTO.getFullName());
-        userEntity.setEmailId(usersDTO.getEmailId());
+        userEntity.setAadharNumber(usersDTO.getAadharNumber());
+        userEntity.setPhoneNumber(usersDTO.getPhoneNumber());
 
         this.userRepo.save(userEntity);
 
@@ -139,17 +154,20 @@ public class userServiceIMP implements userServices {
 
     // Convert from Entity to DTO
     private UsersDTO entityToDto(UsersEntity userEntity) {
-        UsersDTO usersDTO = modelMapper.map(userEntity, UsersDTO.class);
+    UsersDTO usersDTO = modelMapper.map(userEntity, UsersDTO.class);
 
-        if(userEntity.getProfiles()!=null)
-        {
-            usersDTO.setProfiles(userEntity.getProfiles().stream().map(profile -> modelMapper.map(profile, ProfileDTO.class)).collect(Collectors.toList()));
-        }
-
-        usersDTO.setRole_id(userEntity.getRole().getId());
-
-        return usersDTO;
+    if (userEntity.getProfile() != null) {
+        ProfileDTO profileDTO = modelMapper.map(userEntity.getProfile(), ProfileDTO.class);
+        usersDTO.setProfile(profileDTO);
     }
+
+    if (userEntity.getRole() != null) {
+        usersDTO.setRole_id(userEntity.getRole().getId());
+    }
+
+    return usersDTO;
+}
+
 
     // Convert from DTO to Entity
     private UsersEntity dtoToEntity(UsersDTO usersDTO) {

@@ -1,6 +1,6 @@
 package com.simmanagmentplatform.Entity;
 
-import java.util.List;
+// import java.util.List;
 // import java.util.Collection;
 // import java.util.HashSet;
 // import java.util.Set;
@@ -33,16 +33,18 @@ public class UsersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String fullName;
+    @Column(unique = true, nullable = false, length = 12)
+    private String aadharNumber;
 
-    private String emailId;
+    @Column(unique = true, nullable = false)
+    private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Roles role;
 
-    @OneToMany(mappedBy = "usersEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ProfileEntity> profiles;
+    @OneToOne(mappedBy = "usersEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private ProfileEntity profile;
 
 
     // @Override

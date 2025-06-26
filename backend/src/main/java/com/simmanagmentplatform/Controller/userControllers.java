@@ -28,7 +28,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+// @CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/user")
 public class userControllers {
     @Autowired
@@ -46,13 +47,18 @@ public class userControllers {
         
         return this.userservices.getUserById(id);
     }
-    @GetMapping("/emailId")
-    public UsersDTO  getMethodName(@RequestParam String emailId) {
-        return this.userservices.getUserByEmailId(emailId);
+    @GetMapping("/aadharnumber")
+    public UsersDTO  getUserByAadhar(@RequestParam String aadharNumber) {
+        return this.userservices.getUserByAadharNumber(aadharNumber);
+    }
+    
+    @GetMapping("/phonenumber")
+    public UsersDTO  getUserByPhoneNumber(@RequestParam String phoneNumber) {
+        return this.userservices.getUserByPhoneNumber(phoneNumber);
     }
     
 
-    @PostMapping("/signup")
+    @PostMapping("/create_user")
     public ResponseEntity<?> createUsers(@Valid @RequestBody UsersDTO users) {
         
         return this.userservices.createUser(users);

@@ -3,14 +3,12 @@ package com.simmanagmentplatform.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -34,23 +32,22 @@ public class ProfileEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String fullName;
+    private String firstName;
+
+    private String lastName;
 
     @Temporal(TemporalType.DATE)
     private String dob;
 
     private String gender;
 
-    private String phoneNumber;
-
-    @Column(name="epin")
-    private String encryptedPin;
+    private String emailId;
 
     private Address address;
     
-    @OneToOne(mappedBy = "profileEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonIgnore
-    private EkycEntity ekycEntity;
+    // @OneToOne(mappedBy = "profileEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    // @JsonIgnore
+    // private EkycEntity ekycEntity;
 
     @OneToOne(mappedBy = "profileEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
@@ -60,7 +57,7 @@ public class ProfileEntity {
     @JsonIgnore
     private OrdersEntity ordersEntity;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     @JsonIgnore
     private UsersEntity usersEntity;

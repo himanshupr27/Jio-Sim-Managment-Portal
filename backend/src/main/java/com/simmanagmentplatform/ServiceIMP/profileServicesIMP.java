@@ -13,13 +13,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.simmanagmentplatform.Dto.ProfileDTO;
-import com.simmanagmentplatform.Entity.EkycEntity;
+// import com.simmanagmentplatform.Entity.EkycEntity;
 import com.simmanagmentplatform.Entity.OrdersEntity;
 import com.simmanagmentplatform.Entity.ProfileEntity;
 import com.simmanagmentplatform.Entity.SimDetailsEntity;
 import com.simmanagmentplatform.Entity.UsersEntity;
 import com.simmanagmentplatform.Exceptions.ResourseNotFoundException;
-import com.simmanagmentplatform.Reposiotry.eKycRepo;
+// import com.simmanagmentplatform.Reposiotry.eKycRepo;
 import com.simmanagmentplatform.Reposiotry.orderRepo;
 import com.simmanagmentplatform.Reposiotry.profileRepo;
 import com.simmanagmentplatform.Reposiotry.simRepo;
@@ -34,8 +34,8 @@ public class profileServicesIMP implements profileServices {
     @Autowired
     profileRepo profileRepo;
 
-    @Autowired
-    eKycRepo eKycRepo;
+    // @Autowired
+    // eKycRepo eKycRepo;
 
     @Autowired
     userRepo userRepo;
@@ -97,16 +97,16 @@ public class profileServicesIMP implements profileServices {
 
         ProfileEntity profileEntity = this.profileRepo.findById(id).orElseThrow(()-> new ResourseNotFoundException("Profile", "id", Long.toString(id)));
 
-        Optional.ofNullable(profileDTO.getFullName()).ifPresent(profileEntity::setFullName);
+        Optional.ofNullable(profileDTO.getFirstName()).ifPresent(profileEntity::setFirstName);
+        Optional.ofNullable(profileDTO.getLastName()).ifPresent(profileEntity::setLastName);
+        Optional.ofNullable(profileDTO.getEmailId()).ifPresent(profileEntity::setEmailId);
         Optional.ofNullable(profileDTO.getDob()).ifPresent(profileEntity::setDob);
-        Optional.ofNullable(profileDTO.getEncryptedPin()).ifPresent(profileEntity::setEncryptedPin);
         Optional.ofNullable(profileDTO.getGender()).ifPresent(profileEntity::setGender);
-        Optional.ofNullable(profileDTO.getPhoneNumber()).ifPresent(profileEntity::setPhoneNumber);
         Optional.ofNullable(profileDTO.getAddress()).ifPresent(profileEntity::setAddress);
-        Optional.ofNullable(profileDTO.getEkyc_id()).ifPresent(ekyc_id->{
-            EkycEntity ekycEntity=this.eKycRepo.findById(ekyc_id).orElseThrow(()-> new ResourseNotFoundException("eKYC RECORD", "id", Long.toString(ekyc_id)));;
-            profileEntity.setEkycEntity(ekycEntity);
-        });
+        // Optional.ofNullable(profileDTO.getEkyc_id()).ifPresent(ekyc_id->{
+        //     EkycEntity ekycEntity=this.eKycRepo.findById(ekyc_id).orElseThrow(()-> new ResourseNotFoundException("eKYC RECORD", "id", Long.toString(ekyc_id)));;
+        //     profileEntity.setEkycEntity(ekycEntity);
+        // });
         Optional.ofNullable(profileDTO.getSim_id()).ifPresent(sim_id->{
             SimDetailsEntity simDetailsEntity=this.simRepo.findById(sim_id).orElseThrow(()-> new ResourseNotFoundException("SIM", "id", Long.toString(sim_id)));;
              profileEntity.setSimDetailsEntity(simDetailsEntity);;
@@ -135,11 +135,11 @@ public class profileServicesIMP implements profileServices {
 
         ProfileEntity profileEntity =this.modelMapper.map(profileDTO, ProfileEntity .class);
        
-        Optional.ofNullable(profileDTO.getEkyc_id()).ifPresent(ekyc_id->{
-            EkycEntity ekycEntity=this.eKycRepo.findById(ekyc_id).orElseThrow(()-> new ResourseNotFoundException("eKYC RECORD", "id", Long.toString(ekyc_id)));;
-            profileEntity.setEkycEntity(ekycEntity);
+        // Optional.ofNullable(profileDTO.getEkyc_id()).ifPresent(ekyc_id->{
+        //     EkycEntity ekycEntity=this.eKycRepo.findById(ekyc_id).orElseThrow(()-> new ResourseNotFoundException("eKYC RECORD", "id", Long.toString(ekyc_id)));;
+        //     profileEntity.setEkycEntity(ekycEntity);
             
-        });
+        // });
        
         Optional.ofNullable(profileDTO.getSim_id()).ifPresent(sim_id->{
            SimDetailsEntity simDetailsEntity=this.simRepo.findById(sim_id).orElseThrow(()-> new ResourseNotFoundException("SIM", "id", Long.toString(sim_id)));
@@ -164,7 +164,7 @@ public class profileServicesIMP implements profileServices {
 
         ProfileDTO profileDTO = this.modelMapper.map(profileEntity, ProfileDTO.class);
 
-        Optional.ofNullable(profileEntity.getEkycEntity()).ifPresent(ekycEntity->profileDTO.setEkyc_id(ekycEntity.getId()));
+        // Optional.ofNullable(profileEntity.getEkycEntity()).ifPresent(ekycEntity->profileDTO.setEkyc_id(ekycEntity.getId()));
 
         Optional.ofNullable(profileEntity.getSimDetailsEntity()).ifPresent(simEntity->profileDTO.setSim_id(simEntity.getSim_id()));
 

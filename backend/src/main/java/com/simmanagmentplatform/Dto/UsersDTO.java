@@ -1,7 +1,6 @@
 package com.simmanagmentplatform.Dto;
 
 
-import java.util.List;
 // import java.util.Set;
 
 // import javax.management.relation.Role;
@@ -11,10 +10,9 @@ import java.util.List;
 // import com.simmanagmentplatform.Entity.OrdersEntity;
 // import com.simmanagmentplatform.Entity.SimDetailsEntity;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+// import jakarta.validation.constraints.NotEmpty;
 // import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+// import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -29,16 +27,16 @@ import lombok.Setter;
 public class UsersDTO {
     private Long id;
 
-    @NotEmpty(message = "Full name cannot be empty")
-    @Size(min = 3, max = 50, message = "Full name must be between 3 and 50 characters")
-    private String fullName;
+    // @NotEmpty(message = "Aadhar number cannot be empty")
+    // @Size(min = 12, max = 12, message = "Aadhar number must be 12 digits")
+    private String aadharNumber;
 
-    @Email(message = "Email must be valid")
-    private String emailId;
+    // @NotEmpty(message = "Phonenumber cannot be empty")
+    private String phoneNumber;
 
     private Long role_id = 2L;
 
-    private List<ProfileDTO> profiles;
+    private ProfileDTO profile;
 
     // @JsonIgnore
     // public String getEncryptedPin() {

@@ -35,8 +35,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-// @CrossOrigin(origins = "*")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(origins = "*")
+// @CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
 @RequestMapping("/email")
 public class EmailController {
 
@@ -65,6 +65,10 @@ public class EmailController {
     @PostMapping("/kYC_verifyied/{id}")
     public ResponseEntity<?> sendEmail(@PathVariable Long id) {
         return emialServices.sendEmailkycUpdate(id);
+    }
+    @PostMapping("/sim_order_placed/{id}")
+    public ResponseEntity<?> sendEmailSimOrderPlaced(@PathVariable Long id) {
+        return emialServices.sendEmailSimOrderPlaced(id);
     }
 
     @GetMapping("/verify")

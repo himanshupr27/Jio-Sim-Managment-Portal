@@ -2,6 +2,7 @@ package com.simmanagmentplatform.Dto;
 
 import com.simmanagmentplatform.Entity.Address;
 
+import jakarta.validation.constraints.Email;
 // import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,26 +18,22 @@ import lombok.Setter;
 public class ProfileDTO {
     private Long id;
 
+    private String firstName;
+
+    private String lastName;
+
     // @NotEmpty(message = "Date of Birth cannot be empty")
     private String dob;
 
     // @NotEmpty(message = "Gender cannot be empty")
     private String gender;
 
-    // @NotEmpty
-    // @Size(min = 10, max = 10, message = "Enter a valid Phone Number")
-    private String phoneNumber;
-
-    // @NotEmpty
-    // @Size(min = 6, max = 6, message = "PIN must be 6 digits")
-    // @Pattern(regexp = "^[0-9]{6}$", message = "Encrypted PIN must contain only numbers")
-    private String encryptedPin;
-
-    private String fullName;
+    @Email(message = "Email must be valid")
+    private String emailId;
 
     private Address address;
 
-    private Long ekyc_id;
+    // private Long ekyc_id;
 
     private Long sim_id;
     

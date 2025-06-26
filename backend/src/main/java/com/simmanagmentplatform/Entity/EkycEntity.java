@@ -1,44 +1,44 @@
-package com.simmanagmentplatform.Entity;
+// package com.simmanagmentplatform.Entity;
 
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+// import jakarta.persistence.*;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// import lombok.Getter;
+// import lombok.Setter;
 
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@Entity
-@Table(name="ekyc_details")
-public class EkycEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+// @Data
+// @AllArgsConstructor
+// @NoArgsConstructor
+// @Getter
+// @Setter
+// @Entity
+// @Table(name="ekyc_details")
+// public class EkycEntity {
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
 
-    private String pan;
+//     private String pan;
 
-    private String aadhar;
+//     private String aadhar;
 
-    @Column(name="status")
-    private String kycstatus;
+//     @Column(name="status")
+//     private String kycstatus;
 
-    private String panpic;
+//     private String panpic;
 
-    private String profilepic;
+//     private String profilepic;
 
-    @Column(name = "addresspic")
-    private String addressproofpic;
+//     @Column(name = "addresspic")
+//     private String addressproofpic;
     
-    private String video;
+//     private String video;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "profile_id")
-    private ProfileEntity profileEntity;
+//     @OneToOne(fetch = FetchType.LAZY)
+//     @JoinColumn(name = "profile_id")
+//     private ProfileEntity profileEntity;
     
-}
+// }

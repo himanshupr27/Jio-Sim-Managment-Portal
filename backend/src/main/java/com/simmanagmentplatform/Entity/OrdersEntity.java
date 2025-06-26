@@ -41,7 +41,7 @@ public class OrdersEntity {
 
     private int amount;
 
-    private String orderStatus ="PENDING";
+    private String orderStatus ="REQUESTED";
 
     @Temporal(TemporalType.DATE)
     private Date orderDate;

@@ -20,7 +20,7 @@ services:
     
   frontend2:
     build:
-      context: ./frontend-sim-order-portal
+      context: ./frontend-sim-order-portal-2
       dockerfile: Dockerfile
     ports:
       - "5174:5174" # Frontend development server

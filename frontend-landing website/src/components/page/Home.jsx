@@ -34,20 +34,6 @@ const Home = () => {
     <div>
       <div className="home-img-container">
         <img src='/Images/Home/image-home.webp' id='home-ing-1' />
-        <>
-        {/* <Carousel
-        className='carousel'
-        animation="slide"
-        duration={1000}
-        navButtonsAlwaysInvisible={true}
-        indicators={false}
-        onChange={handleChange}
-      >
-        {items.map((item, i) => (
-          <img src={item.image} alt={`${i} Slide`} key={i} style={{ width: "100%", height: "400px", objectFit: "cover" }} />
-        ))}
-      </Carousel> */}
-        </>
         <h1 className='image-heading'>Turn Mobility Into a Trusted Business Asset</h1>
       </div>
       <div className='home-content-1'>
@@ -83,7 +69,8 @@ const Home = () => {
           <Col className='hm-xt-2-box-2'>
             <button>PLANS</button>
             <h4>Enterprise Plans - PKI SIM</h4>
-            <a href="http://localhost:5174/order" target="_blank" rel="noopener noreferrer">Order Now</a>
+            {/* <a href="http://localhost:5174/order" target="_blank" rel="noopener noreferrer">Order Now</a> */}
+            <Link to="/bussiness/user/login">Order now</Link>
           </Col>
           <Col className='hm-xt-2-box-3'>
             <button> R&D </button>

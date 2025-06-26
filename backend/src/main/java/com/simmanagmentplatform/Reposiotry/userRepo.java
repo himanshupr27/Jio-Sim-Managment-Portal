@@ -9,6 +9,7 @@ import com.simmanagmentplatform.Entity.UsersEntity;
 
 public interface userRepo extends JpaRepository<UsersEntity,Long>{
 
- Optional<UsersEntity> findByEmailId(String emailId);
+ Optional<UsersEntity> findByaadharNumber(String aadharNumber);
+ Optional<UsersEntity> findByPhoneNumber(String phoneNumber);
 
 }

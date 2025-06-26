@@ -21,7 +21,9 @@ public interface userServices {
 
     public UsersDTO getUserById(Long id);
 
-    public UsersDTO getUserByEmailId(String emailId);
+    public UsersDTO getUserByAadharNumber(String aadharNumber);
+    
+    public UsersDTO getUserByPhoneNumber(String phoneNumber);
     
     public ResponseEntity<?> deleteUser(Long id);
     

@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245 245 245);
+    padding: 1.5vmax 0;
+    img{
+       width: 2.2vmax;
+       margin-right: 1vmax;
+    }
+    p{
+        margin: 0;
+        font-size: 1vmax;
+    }
+}

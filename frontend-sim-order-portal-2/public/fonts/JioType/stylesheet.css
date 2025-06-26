@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-Medium.woff2') format('woff2'),
+        url('JioType-Medium.woff') format('woff'),
+        url('JioType-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-Bold.woff2') format('woff2'),
+        url('JioType-Bold.woff') format('woff'),
+        url('JioType-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-LightItalic.woff2') format('woff2'),
+        url('JioType-LightItalic.woff') format('woff'),
+        url('JioType-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-MediumItalic.woff2') format('woff2'),
+        url('JioType-MediumItalic.woff') format('woff'),
+        url('JioType-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-Light.woff2') format('woff2'),
+        url('JioType-Light.woff') format('woff'),
+        url('JioType-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JioType';
+    src: url('JioType-Black.woff2') format('woff2'),
+        url('JioType-Black.woff') format('woff'),
+        url('JioType-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

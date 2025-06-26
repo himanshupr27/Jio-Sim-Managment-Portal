@@ -1,16 +1,16 @@
-package com.simmanagmentplatform.Reposiotry;
+// package com.simmanagmentplatform.Reposiotry;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.simmanagmentplatform.Entity.EkycEntity;
-import com.simmanagmentplatform.Entity.ProfileEntity;
+// import com.simmanagmentplatform.Entity.EkycEntity;
+// import com.simmanagmentplatform.Entity.ProfileEntity;
 
 
-public interface eKycRepo extends JpaRepository<EkycEntity,Long> {
+// public interface eKycRepo extends JpaRepository<EkycEntity,Long> {
 
-  List<EkycEntity> findByKycstatus(String kycstatus);
-  EkycEntity findByProfileEntity(ProfileEntity profileEntity);
+//   List<EkycEntity> findByKycstatus(String kycstatus);
+//   EkycEntity findByProfileEntity(ProfileEntity profileEntity);
   
-}
+// }
