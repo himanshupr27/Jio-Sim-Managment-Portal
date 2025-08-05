@@ -116,7 +116,7 @@ public class userServiceIMP implements userServices {
     @Override
     public UsersDTO getUserByPhoneNumber(String phoneNumber)
     {
-        UsersEntity userEntity = this.userRepo.findByaadharNumber(phoneNumber)
+        UsersEntity userEntity = this.userRepo.findByPhoneNumber(phoneNumber)
         .orElseThrow(() -> new ResourseNotFoundException("User ", "ID", phoneNumber));
     return entityToDto(userEntity);
     }

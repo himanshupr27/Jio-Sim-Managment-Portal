@@ -39,11 +39,12 @@ public class orderServicesIMP implements orderServices {
         OrdersEntity ordersEntity = this.dtoToEntity(ordersDTO);
 
         ordersEntity.setOrderDate(new Date());
-        ordersEntity.setOrderStatus("KYC PENDING");
+        ordersEntity.setOrderStatus("REQUEST");
 
         OrdersDTO savOrdersDTO =entityToDto(this.orderRepo.save(ordersEntity));
         ApiResponseWithData<OrdersDTO> apiResponseWithData =new ApiResponseWithData<>("Order CREATED", true, savOrdersDTO);
 
+        
         return new ResponseEntity<>(apiResponseWithData, HttpStatus.OK);
 
     }

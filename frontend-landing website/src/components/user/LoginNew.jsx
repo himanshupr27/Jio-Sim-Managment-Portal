@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const LoginNew = () => {
     const [user, setUser] = useState({
-        emailId: "",
+        phoneNumber: "",
         otp:""
     });
     const navigate = useNavigate();
@@ -23,9 +23,11 @@ const LoginNew = () => {
     // const [showPassword, setShowPassword] = useState(false);
     const [otpbox, setOtpbox] = useState(false);
     const [OTP,setOTP]= useState();
+    const [generateOtp, setGenerateOtp] = useState(0);
     const [otpError, setOtpError] = useState(false);
     const [responsedata,setResponsData]=useState({});
     const [isbuttonDisabled, setisbuttonDisabled] = useState(true);
+    const [userDetails,setUserDetails]= useState({});
 
     // const handlePasswordToggle = () => {
     //     setShowPassword(!showPassword);
@@ -53,11 +55,12 @@ const LoginNew = () => {
     }
 
     useEffect(() => {
-        if (user.emailId)
+        if (user.phoneNumber)
             setisbuttonDisabled(false);
         else
             setisbuttonDisabled(true);
-    }, [user.emailId]);
+    }, [user.phoneNumber]);
+
     useEffect(() => {
         if (OTP && OTP.toString().length === 6) {
             setisbuttonDisabled(false);
@@ -67,22 +70,32 @@ const LoginNew = () => {
     }, [OTP]);
 
     const handelSendOtp=async()=>{
-       const response= await axios.get(`http://localhost:2705/api/user/emailId?emailId=${user.emailId}`);
-        // console.log(response);
+       const response= await axios.get(`http://localhost:2705/api/user/phonenumber?phoneNumber=${user.phoneNumber}`);
+        console.log("Hello",response);
+        setUserDetails(response.data)
         if(response.status==200)
         {
             setOtpbox(true);
-            const otpresponse= await axios.get(`http://localhost:2705/email/send?email=${user.emailId}`
-                , { withCredentials: true }
-            );
-            // console.log(otpresponse);
-            if(otpresponse.status==200){
-                localStorage.setItem('user',JSON.stringify(response.data));
-                setResponsData(response.data);
-            }
+            // const otpresponse= await axios.get(`http://localhost:2705/email/send?email=${user.emailId}`
+            //     , { withCredentials: true }
+            // );
+            // // console.log(otpresponse);
+            // if(otpresponse.status==200){
+            //     localStorage.setItem('user',JSON.stringify(response.data));
+            //     setResponsData(response.data);
+            // }
+            generateOtpCode();
         }
 
     }
+    const generateOtpCode = () => {
+        const newOtp = Math.floor(100000 + Math.random() * 900000);
+        setGenerateOtp(newOtp);
+        alert(`The OTP for login is ${newOtp}`);
+        
+    };
+
+{
 
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
@@ -116,14 +129,16 @@ const LoginNew = () => {
     //         setisloginerror(true);
     //     }
     // }
+}
     const handelVerifOtp=async()=>{
-        const otpresponse= await axios.get(`http://localhost:2705/email/verify?otp=${OTP}`
-            , { withCredentials: true }
-        );
-        console.log(otpresponse);
-        if (otpresponse.status==200){
+        // const otpresponse= await axios.get(`http://localhost:2705/email/verify?otp=${OTP}`
+        //     , { withCredentials: true }
+        // );
+        // console.log(otpresponse);
+
+        if (Number(OTP) === generateOtp){
             alert("sucessfull")
-            if(responsedata.role_id == 1){
+            if(userDetails.role_id == 1){
                 navigate('/admin')
             }
             else{
@@ -140,11 +155,11 @@ const LoginNew = () => {
                 <form className='login-form'>
 
                     {/* Email Input */}
-                    <div className={`input-box ${errors.email ? 'errors-bar' : ''}`}>
-                        <input id="email" type="text" name="emailId" required="required" value={user.emailId} onChange={handleInput}  disabled={otpbox}/>
-                        <label htmlFor="email">E-mail ID/ Jio User ID</label>
+                    <div className={`input-box ${errors.phoneNumber ? 'errors-bar' : ''}`}>
+                        <input id="phoneNumber" type="text" name="phoneNumber" required="required" value={user.phoneNumber} onChange={handleInput}  disabled={otpbox}/>
+                        <label htmlFor="email">Phone Number/ Jio User ID</label>
                     </div>
-                    {errors.email && <span className="error-message"><RxCrossCircled />Enter E-mail ID /Jio User ID</span>}
+                    {errors.phoneNumber && <span className="error-message"><RxCrossCircled />Enter Phone Number /Jio User ID</span>}
 
                     {/* OTP Input */}
                     {otpbox && <div className='otp-container'>

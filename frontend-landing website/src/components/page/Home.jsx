@@ -69,8 +69,8 @@ const Home = () => {
           <Col className='hm-xt-2-box-2'>
             <button>PLANS</button>
             <h4>Enterprise Plans - PKI SIM</h4>
-            {/* <a href="http://localhost:5174/order" target="_blank" rel="noopener noreferrer">Order Now</a> */}
-            <Link to="/bussiness/user/login">Order now</Link>
+            <a href="http://localhost:5174/order" target="_blank" rel="noopener noreferrer">Order Now</a>
+            {/* <Link to="/bussiness/user/login">Order now</Link> */}
           </Col>
           <Col className='hm-xt-2-box-3'>
             <button> R&D </button>

@@ -8,7 +8,7 @@ import UserList from './UserList';
 import SimList from './SimList';
 import OrderList from './OrderList';
 import ProfileList from './ProfileList';
-import EkycList from './EkycList';
+// import EkycList from './EkycList';
 
 const AdminDashboard = () => {
 
@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   const [simCollapse, setSimCollapse] = useState(true);
   const [ordersCollapse, setOrdersCollapse] = useState(true);
   const [profileCollapse, setProfileCollapse] = useState(true);
-  const [ekycCollapse, setEkycsCollapse] = useState(true);
+  // const [ekycCollapse, setEkycsCollapse] = useState(true);
   const [content, setContent] = useState(1);
   const [user, setUser] = useState({});
 
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
             </li>
 
 
-            <li className={`${ekycCollapse ? '' : 'backgd-color'}`} >
+            {/* <li className={`${ekycCollapse ? '' : 'backgd-color'}`} >
               <span onClick={() => { setEkycsCollapse(!ekycCollapse) }}><FaAngleDown className={`${ekycCollapse ? 'arrow-rotate' : 'noarrow-rotate'}`} />
                 eKYC</span>
               <ul className={`side-nav-content-details ${(ekycCollapse && (content !== 11 || content !== 12 || content !== 13 || content !== 14)) ? 'collappse' : ''}`}>
@@ -109,7 +109,7 @@ const AdminDashboard = () => {
                 <li className={`${content === 13 ? 'content-selected' : ''}`} onClick={() => { setContent(13) }}>All eKYCs</li>
                 <li className={`${content === 14 ? 'content-selected' : ''}`} onClick={() => { setContent(14) }}>Completed eKYC</li>
               </ul>
-            </li>
+            </li> */}
 
 
           </ul>
@@ -128,10 +128,10 @@ const AdminDashboard = () => {
           {content === 8 ? <OrderList contentType={content} /> : <></>}
           {content === 9 ? <OrderList contentType={content} /> : <></>}
           {content === 10 ? <ProfileList contentType={content} /> : <></>}
-          {content === 11 ? <EkycList contentType={content} /> : <></>}
+          {/* {content === 11 ? <EkycList contentType={content} /> : <></>}
           {content === 12 ? <EkycList contentType={content} /> : <></>}
           {content === 13 ? <EkycList contentType={content} /> : <></>}
-          {content === 14 ? <EkycList contentType={content} /> : <></>}
+          {content === 14 ? <EkycList contentType={content} /> : <></>} */}
 
 
 
